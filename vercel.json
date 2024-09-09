@@ -1,24 +1,14 @@
+
 {
-    "version": 2,
-    "builds": [
-      {
+    "builds": [{
         "src": "myproject/wsgi.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "build": {
-      "env": {
-        "DJANGO_SETTINGS_MODULE": "myproject.settings"
-      },
-      "buildCommand": [
-        "python3 manage.py collectstatic --noinput"
-      ]
-    },
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.11.2" }
+    }],
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "myproject/wsgi.py"
-      }
+        {
+            "src": "/(.*)",
+            "dest": "myproject/wsgi.py"
+        }
     ]
-  }
-  
+}
