@@ -10,7 +10,7 @@
       "env": {
         "DJANGO_SETTINGS_MODULE": "myproject.settings"
       },
-      "commands": [
+      "buildCommand": [
         "python3 manage.py collectstatic --noinput"
       ]
     },
